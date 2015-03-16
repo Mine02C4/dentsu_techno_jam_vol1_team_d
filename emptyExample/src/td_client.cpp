@@ -8,10 +8,10 @@ TdClient::TdClient(){
 }
 
 void TdClient::getDatabases() {
-  auto fileStream = std::make_shared<ostream>();
+  auto file_stream = std::make_shared<ostream>();
   // Open stream to output file.
   pplx::task<void> requestTask = fstream::open_ostream(U("results.html")).then([=](ostream outFile) {
-    *fileStream = outFile;
+    *file_stream = outFile;
     http_request request(methods::GET);
     request.headers().add(L"AUTHORIZATION", kTDApiKey);
     request.set_request_uri(L"/v3/database/list");
@@ -22,15 +22,15 @@ void TdClient::getDatabases() {
     printf("Received response status code:%u\n", response.status_code());
 
     const json::value json = response.extract_json().get();
-    std::wcout << json.to_string() << std::endl;
-    str_ = ::utility::conversions::to_utf8string(json.to_string());
+    std::wcout << json.serialize() << std::endl;
+    str_ = ::utility::conversions::to_utf8string(json.serialize());
 
     // Write response body into the file.
-    return response.body().read_to_end(fileStream->streambuf());
+    return response.body().read_to_end(file_stream->streambuf());
   })
     // Close the file stream.
     .then([=](size_t) {
-    return fileStream->close();
+    return file_stream->close();
   });
 
   // Wait for all the outstanding I/O to complete and handle any exceptions
@@ -45,9 +45,9 @@ void TdClient::getDatabases() {
 }
 
 void TdClient::postJob() {
-  auto fileStream = std::make_shared<ostream>();
+  auto file_stream = std::make_shared<ostream>();
   pplx::task<void> requestTask = fstream::open_ostream(U("results.html")).then([=](ostream outFile) {
-    *fileStream = outFile;
+    *file_stream = outFile;
     http_request request(methods::POST);
     request.headers().add(L"AUTHORIZATION", kTDApiKey);
     //request.headers().add(L"Content-Type", L"application/x-www-form-urlencoded");
@@ -63,11 +63,11 @@ void TdClient::postJob() {
     .then([=](http_response response) {
     printf("Received response status code:%u\n", response.status_code());
     json::value json = response.extract_json().get();
-    std::wcout << json.to_string() << std::endl;
-    str_ = ::utility::conversions::to_utf8string(json.to_string());
+    std::wcout << json.serialize() << std::endl;
+    str_ = ::utility::conversions::to_utf8string(json.serialize());
     job_id_ = std::stoll(json[U("job_id")].as_string());
-    fileStream->write(str_.c_str());
-    fileStream->close();
+    file_stream->print(str_.c_str());
+    file_stream->close();
     // Write response body into the file.
   });
   // Close the file stream.
@@ -94,8 +94,8 @@ bool TdClient::checkJobFinished() {
     .then([=](http_response response) {
     printf("Received response status code:%u\n", response.status_code());
     json::value json = response.extract_json().get();
-    std::wcout << json.to_string() << std::endl;
-    str_ = ::utility::conversions::to_utf8string(json.to_string());
+    std::wcout << json.serialize() << std::endl;
+    str_ = ::utility::conversions::to_utf8string(json.serialize());
     auto hoge = json[U("status")].as_string();
     if (hoge == L"success" || hoge == L"error") {
       return false;

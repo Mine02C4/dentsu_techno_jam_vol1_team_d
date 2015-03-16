@@ -133,11 +133,16 @@ bool TdClient::fetchResult() {
           const utility::string_t &line = utility::conversions::to_string_t(in_string_buffer.collection());
           auto json_line = json::value::parse(line);
           Kansei kansei;
-          kansei.interest = json_line[0].is_null() ? 0 : _wtoi(json_line[0].as_string().c_str());
-          kansei.drowsiness = json_line[1].is_null() ? 0 : _wtoi(json_line[1].as_string().c_str());
-          kansei.concentration = json_line[2].is_null() ? 0 : _wtoi(json_line[2].as_string().c_str());
-          kansei.stress = json_line[3].is_null() ? 0 : _wtoi(json_line[3].as_string().c_str());
-          kansei.like = json_line[4].is_null() ? 0 : _wtoi(json_line[4].as_string().c_str());
+          kansei.interest =
+            json_line[0].is_null() ? std::numeric_limits<double>::quiet_NaN() : _wtoi(json_line[0].as_string().c_str());
+          kansei.drowsiness =
+            json_line[1].is_null() ? std::numeric_limits<double>::quiet_NaN() : _wtoi(json_line[1].as_string().c_str());
+          kansei.concentration =
+            json_line[2].is_null() ? std::numeric_limits<double>::quiet_NaN() : _wtoi(json_line[2].as_string().c_str());
+          kansei.stress =
+            json_line[3].is_null() ? std::numeric_limits<double>::quiet_NaN() : _wtoi(json_line[3].as_string().c_str());
+          kansei.like =
+            json_line[4].is_null() ? std::numeric_limits<double>::quiet_NaN() : _wtoi(json_line[4].as_string().c_str());
           kanseis_.push_back(kansei);
         }
       });

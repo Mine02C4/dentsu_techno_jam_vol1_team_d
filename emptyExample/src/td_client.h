@@ -21,10 +21,10 @@ struct Kansei{
 
 class TdClient{
   std::string str_;
-  //std::vector<TdDatabase> databases_;
   std::vector<Kansei> kanseis_;
   http_client* client_;
   long long job_id_;
+  http_request setupHttpRequest();
 public:
   TdClient();
   ~TdClient();

@@ -7,13 +7,18 @@ TdClient::TdClient(){
   client_ = new http_client(U("http://api.treasuredata.com/"));
 }
 
+http_request TdClient::setupHttpRequest() {
+  http_request request(methods::GET);
+  request.headers().add(L"AUTHORIZATION", kTDApiKey);
+  return request;
+}
+
 void TdClient::getDatabases() {
   auto file_stream = std::make_shared<ostream>();
   // Open stream to output file.
   pplx::task<void> requestTask = fstream::open_ostream(U("results.html")).then([=](ostream outFile) {
     *file_stream = outFile;
-    http_request request(methods::GET);
-    request.headers().add(L"AUTHORIZATION", kTDApiKey);
+    auto request = setupHttpRequest();
     request.set_request_uri(L"/v3/database/list");
     return client_->request(request);
   })
@@ -48,8 +53,7 @@ void TdClient::postJob() {
   auto file_stream = std::make_shared<ostream>();
   pplx::task<void> requestTask = fstream::open_ostream(U("results.html")).then([=](ostream outFile) {
     *file_stream = outFile;
-    http_request request(methods::POST);
-    request.headers().add(L"AUTHORIZATION", kTDApiKey);
+    auto request = setupHttpRequest();
     //request.headers().add(L"Content-Type", L"application/x-www-form-urlencoded");
     request.set_request_uri(L"/v3/job/issue/hive/eeg_datasets");
     request.set_body(
@@ -87,7 +91,6 @@ void TdClient::postJob() {
 bool TdClient::checkJobFinished() {
   http_request request(methods::GET);
   request.headers().add(L"AUTHORIZATION", kTDApiKey);
-  //request.headers().add(L"Content-Type", L"application/x-www-form-urlencoded");
   request.set_request_uri(L"/v3/job/status/" + std::to_wstring(job_id_));
   pplx::task<bool> requestTask = client_->request(request)
     // Handle response headers arriving.
@@ -117,8 +120,7 @@ bool TdClient::checkJobFinished() {
 }
 
 bool TdClient::fetchResult() {
-  http_request request(methods::GET);
-  request.headers().add(L"AUTHORIZATION", kTDApiKey);
+  auto request = setupHttpRequest();
   request.set_request_uri(L"/v3/job/result/" + std::to_wstring(job_id_) + L"?format=json");
   pplx::task<bool> requestTask = client_->request(request)
     .then([=](http_response response) {

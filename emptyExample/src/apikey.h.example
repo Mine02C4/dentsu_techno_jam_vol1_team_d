@@ -1,0 +1,3 @@
+#pragma once
+
+const wchar_t* kTDApiKey = L"TD1 00000000000000000000000000000000";

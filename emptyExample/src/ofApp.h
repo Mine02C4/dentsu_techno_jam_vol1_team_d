@@ -1,8 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
+#include "td_client.h"
 
 class ofApp : public ofBaseApp{
+    TdClient* td_client_;
 	public:
 		void setup();
 		void update();

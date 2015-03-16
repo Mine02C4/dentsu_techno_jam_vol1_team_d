@@ -95,9 +95,12 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\td_client.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\apikey.h" />
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\td_client.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

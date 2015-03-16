@@ -2,17 +2,23 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+  td_client_ = new TdClient();
+  //td_client_->postJob();
+  //while (td_client_->checkJobFinished()) {
+  //  Sleep(3000);
+  //}
+  td_client_->setJobId(22296165);
+  td_client_->fetchResult();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+  
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+  ofDrawBitmapString(td_client_->getStr(), 10, 10);
 }
 
 //--------------------------------------------------------------

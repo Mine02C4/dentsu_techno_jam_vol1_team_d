@@ -52,6 +52,8 @@ void Visualizer::update(Kansei kansei) {
 void Visualizer::renderTeam(Team team) {
   light_.enable();
 
+  float scale = 1.0 + 0.2 * sin(ofGetElapsedTimef() * 2 * PI / (60.0 / kBPM));
+
   // begin scene to post process
   post_.begin(camera_);
 
@@ -61,6 +63,7 @@ void Visualizer::renderTeam(Team team) {
     ofSetColor(team.base_color);
     ofPushMatrix();
     ofTranslate(positions_[i]);
+    ofScale(scale, scale, scale);
     sphere_mesh_.draw();
     ofPopMatrix();
   }

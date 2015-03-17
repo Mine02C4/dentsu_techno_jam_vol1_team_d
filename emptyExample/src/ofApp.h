@@ -16,6 +16,9 @@ class ofApp : public ofBaseApp{
     Realtime* realtime_;
     Visualizer* visualizer_;
     vector<Kansei> kanseis_;
+
+    ofSoundPlayer player;
+
 	public:
 		void setup();
 		void update();

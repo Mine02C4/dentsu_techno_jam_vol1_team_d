@@ -22,6 +22,10 @@ void ofApp::setup(){
   realtime_ = new Realtime([this](Kansei kansei){
     this->kanseis_.push_back(kansei);
   });
+
+  player.loadSound("bgm.mp3");
+  player.setLoop(true);
+  player.play();
 }
 
 //--------------------------------------------------------------

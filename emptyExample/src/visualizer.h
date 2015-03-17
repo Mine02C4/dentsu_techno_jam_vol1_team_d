@@ -11,6 +11,7 @@ class Visualizer {
   static const int kAREA_WIDTH = 600;
   static const int kAREA_HEIGHT = 600;
   static const int kAREA_DEPTH = 600;
+  static const int kBPM = 130;
 
   ofxPostProcessing post_;
   ofEasyCam camera_;

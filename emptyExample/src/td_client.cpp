@@ -1,5 +1,4 @@
 #include "td_client.h"
-#include "td_client.h"
 #include "apikey.h"
 
 TdClient::TdClient(){

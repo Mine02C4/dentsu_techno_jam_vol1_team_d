@@ -21,7 +21,6 @@ struct Kansei{
 
 class TdClient{
   std::string str_;
-  std::vector<Kansei> kanseis_;
   http_client* client_;
   long long job_id_;
   http_request setupHttpRequest();
@@ -29,6 +28,7 @@ public:
   TdClient();
   ~TdClient();
   std::string getStr();
+  std::vector<Kansei> kanseis_;
   void getDatabases();
   void postJob();
   long long getJobId();

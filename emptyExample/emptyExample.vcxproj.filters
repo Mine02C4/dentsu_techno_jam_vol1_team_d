@@ -10,10 +10,94 @@
     <ClCompile Include="src\td_client.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\realtime.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\BleachBypassPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\BloomPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\ContrastPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\ConvolutionPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\DofAltPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\DofPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\EdgePass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\FakeSSSPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\FxaaPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\GodRaysPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\HorizontalTiltShifPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\KaleidoscopePass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\LimbDarkeningPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\LUTPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\NoiseWarpPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\PostProcessing.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\RenderPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\RGBShiftPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\RimHighlightingPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\SSAOPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\ToonPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\VerticalTiltShifPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\ZoomBlurPass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="ofx\PostProcessing\src\PixelatePass.cpp">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\visualizer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
       <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ofx">
+      <UniqueIdentifier>{83487291-4c60-4899-8430-0361a4fe11a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ofx\PostProcessing">
+      <UniqueIdentifier>{5e324ccc-eb68-4c08-b137-923a1e82c0f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +108,90 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\apikey.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\realtime.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\BleachBypassPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\BloomPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\ContrastPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\ConvolutionPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\DofAltPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\DofPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\EdgePass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\FakeSSSPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\FxaaPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\GodRaysPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\HorizontalTiltShifPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\KaleidoscopePass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\LimbDarkeningPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\LUTPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\NoiseWarpPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\ofxPostProcessing.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\ZoomBlurPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\PixelatePass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\PostProcessing.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\RenderPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\RGBShiftPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\RimHighlightingPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\SSAOPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\ToonPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="ofx\PostProcessing\src\VerticalTiltShifPass.h">
+      <Filter>ofx\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\visualizer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

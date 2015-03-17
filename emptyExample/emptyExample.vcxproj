@@ -93,14 +93,68 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ofx\PostProcessing\src\BleachBypassPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\BloomPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\ContrastPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\ConvolutionPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\DofAltPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\DofPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\EdgePass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\FakeSSSPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\FxaaPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\GodRaysPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\HorizontalTiltShifPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\KaleidoscopePass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\LimbDarkeningPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\LUTPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\NoiseWarpPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\PixelatePass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\PostProcessing.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\RenderPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\RGBShiftPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\RimHighlightingPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\SSAOPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\ToonPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\VerticalTiltShifPass.cpp" />
+    <ClCompile Include="ofx\PostProcessing\src\ZoomBlurPass.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\realtime.cpp" />
     <ClCompile Include="src\td_client.cpp" />
+    <ClCompile Include="src\visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ofx\PostProcessing\src\BleachBypassPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\BloomPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\ContrastPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\ConvolutionPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\DofAltPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\DofPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\EdgePass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\FakeSSSPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\FxaaPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\GodRaysPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\HorizontalTiltShifPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\KaleidoscopePass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\LimbDarkeningPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\LUTPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\NoiseWarpPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\ofxPostProcessing.h" />
+    <ClInclude Include="ofx\PostProcessing\src\PixelatePass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\PostProcessing.h" />
+    <ClInclude Include="ofx\PostProcessing\src\RenderPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\RGBShiftPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\RimHighlightingPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\SSAOPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\ToonPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\VerticalTiltShifPass.h" />
+    <ClInclude Include="ofx\PostProcessing\src\ZoomBlurPass.h" />
     <ClInclude Include="src\apikey.h" />
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\realtime.h" />
     <ClInclude Include="src\td_client.h" />
+    <ClInclude Include="src\types.h" />
+    <ClInclude Include="src\visualizer.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

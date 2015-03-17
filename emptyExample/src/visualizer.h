@@ -24,6 +24,7 @@ class Visualizer {
   double sphere_per_second_;
 public:
   Visualizer();
+  void initPost();
   void update(Kansei);
   void renderTeam(Team);
   void keyPressed(int);

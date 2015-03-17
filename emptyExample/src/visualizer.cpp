@@ -1,11 +1,20 @@
 #include "visualizer.h"
 
 Visualizer::Visualizer() {
+  initPost();
+  sphere_per_second_ = 10.0;
+
+  positions_.push_back(generatePosition());
+  light_.setPosition(1000, 1000, -2000);
+  sphere_mesh_ = ofMesh::sphere(20);
+}
+
+void Visualizer::initPost() {
   ofBackground(255);
   post_.init(ofGetWidth(), ofGetHeight());
   post_.createPass<FxaaPass>()->setEnabled(false);
-  post_.createPass<BloomPass>()->setEnabled(true);
-  post_.createPass<DofPass>()->setEnabled(true);
+  post_.createPass<BloomPass>()->setEnabled(false);
+  post_.createPass<DofPass>()->setEnabled(false);
   post_.createPass<KaleidoscopePass>()->setEnabled(false);
   post_.createPass<NoiseWarpPass>()->setEnabled(false);
   post_.createPass<PixelatePass>()->setEnabled(false);
@@ -13,11 +22,8 @@ Visualizer::Visualizer() {
   post_.createPass<VerticalTiltShifPass>()->setEnabled(false);
   post_.createPass<GodRaysPass>()->setEnabled(false);
 
-  sphere_per_second_ = 10.0;
-
-  positions_.push_back(generatePosition());
-  light_.setPosition(1000, 1000, -2000);
-  sphere_mesh_ = ofMesh::sphere(20);
+  post_.createPass<BloomPass>()->setEnabled(true);
+  post_.createPass<DofPass>()->setEnabled(true);
 }
 
 ofVec3f Visualizer::generatePosition() {
@@ -59,7 +65,7 @@ void Visualizer::renderTeam(Team team) {
     ofPopMatrix();
   }
 
-  ofDrawAxis(100);
+  //ofDrawAxis(100);
 
   // end scene and draw
   post_.end();
@@ -68,15 +74,15 @@ void Visualizer::renderTeam(Team team) {
   glPopAttrib();
 
   ofSetColor(0, 255, 255);
-  ofDrawBitmapString("Number keys toggle effects, mouse rotates scene", 10, 20);
-  for (unsigned i = 0; i < post_.size(); ++i)
+  //ofDrawBitmapString("Number keys toggle effects, mouse rotates scene", 10, 20);
+  /*for (unsigned i = 0; i < post_.size(); ++i)
   {
     if (post_[i]->getEnabled()) ofSetColor(0, 255, 255);
     else ofSetColor(255, 0, 0);
     ostringstream oss;
     oss << i << ": " << post_[i]->getName() << (post_[i]->getEnabled() ? " (on)" : " (off)");
     ofDrawBitmapString(oss.str(), 10, 20 * (i + 2));
-  }
+  }*/
 }
 
 void Visualizer::keyPressed(int key){

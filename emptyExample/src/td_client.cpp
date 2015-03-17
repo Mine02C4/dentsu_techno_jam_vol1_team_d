@@ -149,25 +149,6 @@ bool TdClient::fetchResult() {
       });
       in_string_buffer.close();
     }
-    /*stream.read_to_end(in_string_buffer).then([this,in_string_buffer](size_t bytes_read){
-      const std::string &str_data = in_string_buffer.collection();
-      while (std::getline(str_data)) {
-
-      }
-      const utility::string_t &data = U("[") + utility::conversions::to_string_t() + U("]");
-      auto json_data = json::value::parse(data);
-      for (int i = 0; i < json_data.size(); i++) {
-        Kansei kansei;
-        kansei.interest = _wtoi(json_data[i][0].as_string().c_str());
-        kansei.drowsiness = _wtoi(json_data[i][1].as_string().c_str());
-        kansei.concentration = _wtoi(json_data[i][2].as_string().c_str());
-        kansei.stress = _wtoi(json_data[i][3].as_string().c_str());
-        kansei.like = _wtoi(json_data[i][4].as_string().c_str());
-        kanseis_.push_back(kansei);
-      }
-    });*/
-    //json::value json = response.extract_json().get();
-    //str_ = ::utility::conversions::to_utf8string(json.to_string());
     return true;
   });
   try

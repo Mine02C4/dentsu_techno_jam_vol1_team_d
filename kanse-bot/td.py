@@ -13,18 +13,15 @@ def get_kansei():
     n = n - datetime.timedelta(minutes=1)
     t = n.strftime("%Y-%m-%d %H:%M:%S %Z")
 
-    # for test
-    t = '2015-03-10 11:16:00 JST'
-
     with tdclient.Client(apikey) as client:
         job = client.query("eeg_datasets",
-              "SELECT AVG(interest) AS interest"
-              "      ,AVG(concentration) AS concentration"
-              "      ,AVG(drowsiness) AS drowsiness"
-              "      ,AVG(stress) AS stress"
-              "      ,AVG(like) AS like"
-              "  FROM kansei"
-              " WHERE TD_TIME_RANGE(time, '" + t + "',"
+              "SELECT AVG(interest) AS interest" +
+              "      ,AVG(concentration) AS concentration" +
+              "      ,AVG(drowsiness) AS drowsiness" +
+              "      ,AVG(stress) AS stress" +
+              "      ,AVG(like) AS like" +
+              "  FROM kansei_sample" +
+              " WHERE TD_TIME_RANGE(time, '" + t + "'," +
               "                     TD_TIME_ADD('" + t + "', '1m'))"
               )
         while not job.finished():

@@ -5,7 +5,7 @@ import os
 import twython
 import urllib3.contrib.pyopenssl
 
-urllib3.contrib.pyopenssl.inject_into_urllib3()
+#urllib3.contrib.pyopenssl.inject_into_urllib3()
 api = twython.Twython(os.getenv("CONSUMER_KEY"),
                       os.getenv("CONSUMER_SECRET"),
                       os.getenv("ACCESS_KEY"),
@@ -18,5 +18,5 @@ def tweet(s):
         print e
 
 if __name__ == '__main__':
-    tweet("test message")
+    tweet("test message 1")
 

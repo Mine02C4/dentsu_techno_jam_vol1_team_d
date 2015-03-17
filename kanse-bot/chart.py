@@ -14,7 +14,7 @@ chtt = "KANSEI"
 chs = "320x320"
 
 def spider_chart(interest, concentration, drowsiness, stress, like, file):
-    chd = "t:%d, %d, %d, %d, %d, %d" % (interest, concentration, drowsiness, stress, like, interest)
+    chd = "t:%d,%d,%d,%d,%d,%d" % (interest, concentration, drowsiness, stress, like, interest)
     url = "http://chart.apis.google.com/chart" + "?cht=" + cht + "&chxt=" + chxt+ "&chls=" + chls + "&chco=" + chco + "&chxp=" + chxp + "&chxl=" + chxl + "&chts=" + chts + "&chtt=" + chtt + "&chs=" + chs + "&chd=" + chd
     res = requests.get(url, stream=True)
     with open(file, "wb") as fp:
